@@ -1,2 +1,17 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+	import { goto } from '$app/navigation';
+	let artists = '';
+	function search() {
+		goto(`${artists}`);
+	}
+
+	$: console.log(artists);
+</script>
+
+<section>
+	<div>
+		<div>Search an artist</div>
+		<input type="text" bind:value={artists} />
+		<button on:click={search}>Search</button>
+	</div>
+</section>
