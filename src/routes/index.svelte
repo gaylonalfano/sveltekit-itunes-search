@@ -1,17 +1,17 @@
 <script>
 	import { goto } from '$app/navigation';
-	let artists = '';
+	let artist = '';
 	function search() {
-		goto(`${artists}`);
+		goto(`${artist}`);
 	}
 
-	$: console.log(artists);
+	$: console.log(artist);
 </script>
 
 <section>
 	<div>
 		<div>Search an artist</div>
-		<input type="text" bind:value={artists} />
+		<input type="text" bind:value={artist} />
 		<button on:click={search}>Search</button>
 	</div>
 </section>
